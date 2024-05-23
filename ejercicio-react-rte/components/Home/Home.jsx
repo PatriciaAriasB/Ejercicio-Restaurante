@@ -1,25 +1,23 @@
-import "./Home.css"
-
+//import React from 'react';
+import "./Home.css";
 
 const Home = (props) => {
-  const menu = props.menu
-  console.log(menu);
+  const menu = props.menu;
+ 
 
-  const listDishes = menu.map(dish => {
-    return (
-      <li>
-        <p>Nombre del plato: {dish.name}</p>
-        <p> Descripción: {dish.description}</p>
-        <p>Precio: {dish.price}€</p>
-      </li>    
-    )
-  })
+  const listDishes = menu.map((dish, index) => (
+    <li key={index}>
+      <p>Nombre del plato: {dish.name}</p>
+      <p>Descripción: {dish.description}</p>
+      <p>Precio: {dish.price}€</p>
+    </li>
+  ));
 
   return (
-    <div>Home
+    <div>
       <ul>{listDishes}</ul>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

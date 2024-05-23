@@ -1,6 +1,8 @@
 
 import Header from '../components/Header/Header';
 import Home from '../components/Home/Home';
+import {Reserve} from "../components/Reserve/Reserve";
+
 import './App.css'
 
 
@@ -29,10 +31,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header name= "Grill" />
+      <Header/>
       <Home menu= {dishes}/>
-      {/* <Person name={name} surname={surname} age={age} />
-      <Person name="Loles" surname="Leon" age={57} /> */}
+      <Reserve/>
+    
     </div>
   );
 
