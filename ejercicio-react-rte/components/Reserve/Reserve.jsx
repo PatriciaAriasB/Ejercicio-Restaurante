@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Reserve.css";
 
 export const Reserve = () => {
@@ -10,6 +10,24 @@ export const Reserve = () => {
   };
 
   const [data, setData] = useState(initialValue);
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const validateForm = () => {
+      if (!data.name) {
+        setMessage("");
+      } else if (data.name.length < 3) {
+        setMessage("El nombre ha de tener mínimo 3 caracteres");
+        setBtnDisabled(true);
+      } else {
+        setMessage("");
+        setBtnDisabled(false);
+      }
+    };
+
+    validateForm();
+  }, [data]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +81,8 @@ export const Reserve = () => {
           value={data.email}
           onChange={handleChange}
         />
-        <input type="submit" value="Enviar" />
+        <input type="submit" value="Enviar" disabled={btnDisabled} />
+        <p>{message}</p>
       </form>
     </div>
   );
