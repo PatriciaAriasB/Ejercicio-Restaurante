@@ -15,7 +15,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <ul>{listDishes}</ul>
+      <ul><h1>Carta Le Petit Bistró</h1>{listDishes}</ul>
     </div>
   );
 }

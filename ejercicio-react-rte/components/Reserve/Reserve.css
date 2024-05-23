@@ -1,0 +1,28 @@
+.reserve-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center; /* Alineación del texto al centro */
+  }
+  
+  .reserve-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .reserve-form input[type="submit"] {
+    width: calc(100% - 20px); /* Ancho del botón menos el margen */
+    margin-left: auto; /* Mover el botón hacia la derecha */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .reserve-form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
